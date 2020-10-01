@@ -21,6 +21,7 @@ a:hover, a:active, a:visited {
     text-decoration: underline;
 }
 
+
 /* Search results navigation bar */
 
 #topnav {
@@ -33,7 +34,7 @@ a:hover, a:active, a:visited {
     /* Container behavior: Decided grid with 3 boxes would be the best fit.
     Also allows for simple responsive adjustments. */
     display: grid;
-    grid-template-columns: 156px 1fr 150px;
+    grid-template-columns: 156px 954px 1fr;
     /* grid-template-rows: ; */
     grid-template-areas:
         "logo search icons";
@@ -53,18 +54,21 @@ a:hover, a:active, a:visited {
 #navsearch {
     grid-area: search;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 500px 200px 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-        "searchbar searchbar"
-        "search-options search-settings";
+        "search-input search-input search-input"
+        "search-options search-settings .";
+}
+
+#search-input  {
+    grid-area: search-input;
 }
 
 #searchbar {
-    grid-area: searchbar;
     display: block;
     width: 700px;
-    padding: 12px 20px 12px 45px;
+    padding: 12px 20px 12px 25px;
     margin: 20px 0;
     box-sizing: border-box;
 
@@ -86,7 +90,7 @@ a:hover, a:active, a:visited {
 
 #searchbar:hover {
     /* Shadow when hover */
-    box-shadow: 0px 2px 7px #dbdbdb;
+    box-shadow: 0px 1px 5px 1px #dbdbdb;
 }
 
 #searchbar:focus {
@@ -98,6 +102,7 @@ a:hover, a:active, a:visited {
     grid-area: search-options;
     list-style-type: none;
     display: flex;
+    align-items: center;
 }
 
 #search-settings {
@@ -105,16 +110,28 @@ a:hover, a:active, a:visited {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
+
+/* ISSUE: The text of links are placed at bottom next to icons. Gotta fix that somehow.
+Maybe icons have to be separate from text. Possible solution:
+
+.material-icons {
+    vertical-align: middle;
+  }  */
 
 .option-link a {
     /* Appearance of links in nav bar */
-    display: inline;
-    color: #222222;
+    display: inline-block;
+    color: #63666b;
     margin: 15px 5px;
     padding: 0 5px;
     font-family: Arial, sans-serif;
     font-size: 0.8em;
+}
+
+.option-link a:hover {
+    text-decoration: none;
 }
 
 #nav-icons {
@@ -126,20 +143,22 @@ a:hover, a:active, a:visited {
 }
 
 .icon-link a {
-    /* Appearance of links in nav bar */
+    /* Inherited code but the color change when hover doesn't work unless this exists */
     display: block;
-    margin: 15px 5px;
-    padding: 0 5px;
+    margin: 15px 0;
+
+    /* The follownig padding is important for hover background */
+    padding: 13px 13px 10px 13px;
 }
 
 #nav-app {
     /* Grey app icon in nav */
-    width: 17px;
-    height: 17px;
-    padding: 10px;
+    width: 15px;
+    height: 15px;
 }
 
 #app-icon a:hover {
+    /* background-color: red; */
     background-color: #f0f0f0;
     border-radius: 50px;
 }
@@ -149,7 +168,7 @@ a:hover, a:active, a:visited {
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    margin-right: 20px;
+    margin-right: 16px;
 }
 
 
@@ -176,7 +195,11 @@ a:hover, a:active, a:visited {
     margin: 0 7px;
 }
 
-.button:hover {
+#tools {
+    padding: 10px;
+}
+
+#tools:hover {
     /* Used box-shadow as trick for button outline*/
     box-shadow: 0 0 1.5px 1px #c6c6c6;
     background-image: linear-gradient(#f8f7f7, #f1f1f1);

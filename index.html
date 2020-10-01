@@ -7,6 +7,11 @@
     <!-- CSS Reset -->
     <link href="CSS/reset.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="CSS/main.css" rel="stylesheet" type="text/css" media="all"/>
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <!-- Font Awesome 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             
     <title>your results - Google Search</title>
     <!-- Tiny icon in tab aka favicon -->
@@ -28,7 +33,8 @@
         </div>
 
         <div id="navsearch">
-            <form class="input-text">
+
+            <form id="search-input">
                 <input 
                 type="text" 
                 id="searchbar" 
@@ -36,17 +42,27 @@
             </form>
         
             <ul id="search-options">
-                <li class="option-link"><a href="#">All</a></li>
-                <li class="option-link"><a href="#">Maps</a></li>
-                <li class="option-link"><a href="#">News</a></li>
-                <li class="option-link"><a href="#">Videos</a></li>
-                <li class="option-link"><a href="#">Images</a></li>
-                <li class="option-link"><a href="#">More</a></li>
+                <li class="option-link"><a href="#">
+                    <!-- Google Icon: <span class="material-icons" style="font-size:18px">search</span> -->
+                    <span class="fa fa-search" style="font-size:16px"></span> All</a></li>
+                <li class="option-link"><a href="#">
+                    <!-- Google Icon: <span class="material-icons-outlined" style="font-size:18px">place</span> -->
+                    <span class="fa fa-map-marker" style="font-size:16px"></span> Maps</a></li>
+                <li class="option-link"><a href="#">
+                    <span class="fa fa-newspaper-o" style="font-size:16px"></span> News</a></li>
+                <li class="option-link"><a href="#">
+                    <!-- Google Icon: <span class="material-icons" style="font-size:18px">slideshow</span> --> 
+                    <span class="fa fa-youtube-play" style="font-size:16px"></span> Videos</a></li>
+                    
+                <li class="option-link"><a href="#">
+                    <!-- Google Icon: <span class="material-icons-outlined" style="font-size:18px">image</span> -->
+                    <span class="fa fa-image" style="font-size:16px"></span> Images</a></li>
+                <li class="option-link"><a href="#"> More</a></li>
             </ul>
 
             <ul id="search-settings">
                 <li class="option-link"><a href="#">Settings</a></li>
-                <li class="option-link"><a href="#">Tools</a></li>
+                <li class="option-link"><a href="#"><span id="tools">Tools</span></a></li>
             </ul>
             
         </div>

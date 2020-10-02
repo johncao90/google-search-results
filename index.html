@@ -26,10 +26,12 @@
     <div id="topnav">
 
         <div id="navlogo">
-            <img 
+            <a href="https://www.google.com/">
+                <img 
                 id="googlelogo" 
                 src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
                 alt="Google logo">
+            </a>
         </div>
 
         <div id="navsearch">
@@ -38,31 +40,37 @@
                 <input 
                 type="text" 
                 id="searchbar" 
-                name="googlesearch">
+                name="googlesearch"
+                placeholder="build this webpage">
             </form>
         
             <ul id="search-options">
-                <li class="option-link"><a href="#">
-                    <!-- Google Icon: <span class="material-icons" style="font-size:18px">search</span> -->
-                    <span class="fa fa-search" style="font-size:16px"></span> All</a></li>
-                <li class="option-link"><a href="#">
-                    <!-- Google Icon: <span class="material-icons-outlined" style="font-size:18px">place</span> -->
-                    <span class="fa fa-map-marker" style="font-size:16px"></span> Maps</a></li>
-                <li class="option-link"><a href="#">
-                    <span class="fa fa-newspaper-o" style="font-size:16px"></span> News</a></li>
-                <li class="option-link"><a href="#">
-                    <!-- Google Icon: <span class="material-icons" style="font-size:18px">slideshow</span> --> 
-                    <span class="fa fa-youtube-play" style="font-size:16px"></span> Videos</a></li>
-                    
-                <li class="option-link"><a href="#">
-                    <!-- Google Icon: <span class="material-icons-outlined" style="font-size:18px">image</span> -->
-                    <span class="fa fa-image" style="font-size:16px"></span> Images</a></li>
-                <li class="option-link"><a href="#"> More</a></li>
+                <li class="option-link"><a id="all-results" href="#">
+                    <span class="material-icons" style="font-size:18px">search</span>
+                    <!-- Font Awesome 4 <span class="fa fa-search" style="font-size:16px"></span> --> All</a></li>
+                <li class="option-link">
+                    <a href="https://www.google.com/maps/place/Area+51,+NV,+USA/@37.2513663,-115.8390265,13z/data=!3m1!4b1!4m5!3m4!1s0x80b81baaba3e8c81:0x970427e38e6237ae!8m2!3d37.2430548!4d-115.7930198">
+                        <span class="material-icons-outlined" style="font-size:18px">place</span>
+                        <!-- Font Awesome 4 <span class="fa fa-map-marker" style="font-size:16px"></span> --> Maps</a></li>
+                <li class="option-link">
+                    <a href="https://www.google.com/search?q=we+live+in+a+simulation&safe=off&bih=904&biw=1508&hl=en&sxsrf=ALeKk00hkJqnrpmfFTCM5-TxCLKGRHR_fg:1601626520656&source=lnms&tbm=nws&sa=X&ved=2ahUKEwjv083eu5XsAhVLlosKHa9uC8QQ_AUoA3oECAsQBQ">
+                        <span class="fa fa-newspaper-o" style="font-size:16px"></span> News</a></li>
+                <li class="option-link">
+                    <a href="#">
+                        <span class="material-icons" style="font-size:18px">slideshow</span>
+                        <!-- Font Awesome 4 <span class="fa fa-youtube-play" style="font-size:16px"></span> --> Videos</a></li>
+                <li class="option-link">
+                    <a href="#">
+                        <span class="material-icons-outlined" style="font-size:18px">image</span>
+                        <!-- Font Awesome 4 <span class="fa fa-image" style="font-size:16px"></span> --> Images</a></li>
+                <li class="option-link">
+                    <a href="#">
+                        <span class="material-icons" style="font-size:18px">more_vert</span>More</a></li>
             </ul>
 
             <ul id="search-settings">
-                <li class="option-link"><a href="#">Settings</a></li>
-                <li class="option-link"><a href="#"><span id="tools">Tools</span></a></li>
+                <li class="settings-link"><a href="#">Settings</a></li>
+                <li class="settings-link"><a href="#"><span id="tools">Tools</span></a></li>
             </ul>
             
         </div>
@@ -86,11 +94,29 @@
 
     </header>
 
-<!-- Main area
+
+<!-- Main area -->
+    <div id="search-results">
+
+        <section id="result-amount">
+            <p>About 69,420,420 results (0.69 seconds)</p>
+        </section>
+    
+        <section class="single-result">
+            <a href="#">
+                <span class="result-link">victor-if.github.io &#8250 google-search-results &#9662</span>
+                <h1 class="result-title">build this webpage - GitHub Pages</h1>
+            </a>
+            <p><span class="result-highlight">build this webpage.</span> https://benjdelt.github.io/google-results/. With zero coding experience, artist building 180 webpages in 180 days ...</p>
+        </section>
+
+    </div>
+    
    
 
 
 
+<!--
         <div id="buttons-search">
             <input 
             type="submit" 

@@ -1,15 +1,15 @@
 /* Google Search results CSS by John Cao */
 
-/* Outline for easier layout. Comment out when done */
+/* Outline for easier layout. Comment out when done 
 * {
     outline: red solid 1px;
-}
+} */
 
 body {
     background-color: white;
     font-family: Arial, sans-serif;
     color: #222222;
-    display: grid;
+    /* display: grid; */
 }
 
 a {
@@ -22,7 +22,7 @@ a:hover, a:active, a:visited {
 }
 
 
-/* Search results navigation bar */
+/* ~~~~~~ Search results navigation bar ~~~~~~ */
 
 #topnav {
     /* Position */
@@ -30,6 +30,10 @@ a:hover, a:active, a:visited {
     left: 0;
     top: 0;
     width: 100%;
+
+    /* This  was for the line at bottom of header. The grid boxes are bigger than this though */
+    height: 120px;
+    border-bottom: 0.5px solid #e2e4e8;
 
     /* Container behavior: Decided grid with 3 boxes would be the best fit.
     Also allows for simple responsive adjustments. */
@@ -54,6 +58,7 @@ a:hover, a:active, a:visited {
 #navsearch {
     grid-area: search;
     display: grid;
+    /* height: 50px; */
     grid-template-columns: 500px 200px 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
@@ -67,7 +72,7 @@ a:hover, a:active, a:visited {
 
 #searchbar {
     display: block;
-    width: 700px;
+    width: 698px;
     padding: 12px 20px 12px 25px;
     margin: 20px 0;
     box-sizing: border-box;
@@ -79,7 +84,7 @@ a:hover, a:active, a:visited {
     /* Blue magnifying glass */
     background-image: url("https://ak.picdn.net/shutterstock/videos/1008656131/thumb/5.jpg");
     background-size: 5%;
-    background-position: 655px 10px;
+    background-position: 650px 10px;
     background-repeat: no-repeat;
 
     border-radius: 50px;
@@ -103,6 +108,8 @@ a:hover, a:active, a:visited {
     list-style-type: none;
     display: flex;
     align-items: center;
+    margin-left: 10px;
+    margin-top: -45px;
 }
 
 #search-settings {
@@ -111,27 +118,62 @@ a:hover, a:active, a:visited {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: -45px;
+    margin-right: 20px;
+}
+
+.settings-link a {
+    /* Appearance of links in nav bar */
+    display: inline-block;
+    color: #63666b;
+    padding: 0 7px 10px;
+    font-family: Arial, sans-serif;
+    font-size: 0.8em;
+}
+
+.settings-link a:hover {
+    text-decoration: none;
 }
 
 /* ISSUE: The text of links are placed at bottom next to icons. Gotta fix that somehow.
-Maybe icons have to be separate from text. Possible solution:
+Maybe icons have to be separate from text. Possible solution: */
 
-.material-icons {
+.material-icons, .material-icons-outlined, .fa {
+    padding-bottom: 3px;
     vertical-align: middle;
-  }  */
+  }
 
 .option-link a {
     /* Appearance of links in nav bar */
     display: inline-block;
     color: #63666b;
-    margin: 15px 5px;
-    padding: 0 5px;
+    margin: 0 8px 0 5px;
+    padding: 0 5px 7px;
     font-family: Arial, sans-serif;
     font-size: 0.8em;
 }
 
 .option-link a:hover {
     text-decoration: none;
+}
+
+#all-results {
+    /* Added padding top top because border pushed it upwards */
+    padding-top: 3px;
+    color: #2e73e7;
+    border-bottom: 3px solid #2e73e7;
+}
+
+#tools {
+    padding: 5px 10px;
+}
+
+#tools:hover {
+    /* Used box-shadow as trick for button outline*/
+    box-shadow: 0 0 1px 1px #c6c6c6;
+    background-image: linear-gradient(#f8f7f7, #f1f1f1);
+    color: #222222;
+    cursor: pointer;
 }
 
 #nav-icons {
@@ -173,6 +215,45 @@ Maybe icons have to be separate from text. Possible solution:
 
 
 
+/* MAIN PART */
+
+p {
+    font-size: 0.9em;
+}
+
+#result-amount {
+    color: #707579;
+}
+
+#search-results {
+    margin-top: 135px;
+    margin-left: 180px;
+    width: 600px;
+}
+
+.single-result, .result-link {
+    margin: 20px 0;
+    line-height: 1.4em;
+    color: #52565a;
+}
+
+.result-link {
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.result-link:hover {
+    
+}
+
+.result-title {
+    font-size: 1.25em;
+    margin: 5px 0;
+}
+
+.result-highlight {
+    font-weight: bold;
+}
 
 /* Turned the buttons container into flex element for centering */
 #buttons-search {
@@ -195,17 +276,6 @@ Maybe icons have to be separate from text. Possible solution:
     margin: 0 7px;
 }
 
-#tools {
-    padding: 10px;
-}
-
-#tools:hover {
-    /* Used box-shadow as trick for button outline*/
-    box-shadow: 0 0 1.5px 1px #c6c6c6;
-    background-image: linear-gradient(#f8f7f7, #f1f1f1);
-    color: #222222;
-    cursor: pointer;
-}
 
 #language {
     text-align: center;

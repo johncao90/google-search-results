@@ -6,366 +6,368 @@
 } */
 
 body {
-    background-color: white;
-    font-family: Arial, sans-serif;
-    color: #222222;
-    /* display: grid; */
+  background-color: white;
+  font-family: Arial, sans-serif;
+  color: #222222;
+  /* display: grid; */
 }
 
 a {
-    text-decoration: none;
-    color: #1a0eab;
+  text-decoration: none;
+  color: #1a0eab;
 }
 
-a:hover, a:active, a:visited {
-    text-decoration: underline;
+a:hover,
+a:active,
+a:visited {
+  text-decoration: underline;
 }
-
 
 /* ~~~~~~ Search results navigation bar ~~~~~~ */
 
 #topnav {
-    /* Position */
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
+  /* Position */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 
-    /* This  was for the line at bottom of header. The grid boxes are bigger than this though */
-    height: 120px;
-    border-bottom: 0.5px solid #e2e4e8;
+  /* This  was for the line at bottom of header. The grid boxes are bigger than this though */
+  height: 120px;
+  border-bottom: 0.5px solid #e2e4e8;
 
-    /* Container behavior: Decided grid with 3 boxes would be the best fit.
+  /* Container behavior: Decided grid with 3 boxes would be the best fit.
     Also allows for simple responsive adjustments. */
-    display: grid;
-    grid-template-columns: 156px 954px 1fr;
-    /* grid-template-rows: ; */
-    grid-template-areas:
-        "logo search icons";
+  display: grid;
+  grid-template-columns: 156px 954px 1fr;
+  /* grid-template-rows: ; */
+  grid-template-areas: "logo search icons";
 }
 
 #navlogo {
-    grid-area: logo;
-    justify-self: flex-start;
+  grid-area: logo;
+  justify-self: flex-start;
 }
 
 #googlelogo {
-    display: block;
-    max-width: 92px;
-    margin: 1.75em 2.5em 4em 1.5em;
+  display: block;
+  max-width: 92px;
+  margin: 1.75em 2.5em 4em 1.5em;
 }
 
 #navsearch {
-    grid-area: search;
-    display: grid;
-    /* height: 50px; */
-    grid-template-columns: 500px 200px 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-        "search-input search-input search-input"
-        "search-options search-settings .";
+  grid-area: search;
+  display: grid;
+  /* height: 50px; */
+  grid-template-columns: 500px 200px 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "search-input search-input search-input"
+    "search-options search-settings .";
 }
 
-#search-input  {
-    grid-area: search-input;
+#search-input {
+  grid-area: search-input;
 }
 
 #searchbar {
-    display: block;
-    width: 698px;
-    padding: 12px 20px 12px 25px;
-    margin: 20px 0;
-    box-sizing: border-box;
+  display: block;
+  width: 698px;
+  padding: 12px 20px 12px 25px;
+  margin: 20px 0;
+  box-sizing: border-box;
 
-    font-family: Arial, sans-serif;
-    font-size: 1em;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
 
-    background-color: white;
-    /* Blue magnifying glass */
-    background-image: url("https://ak.picdn.net/shutterstock/videos/1008656131/thumb/5.jpg");
-    background-size: 5%;
-    background-position: 650px 10px;
-    background-repeat: no-repeat;
+  background-color: white;
+  /* Blue magnifying glass */
+  background-image: url("https://ak.picdn.net/shutterstock/videos/1008656131/thumb/5.jpg");
+  background-size: 5%;
+  background-position: 650px 10px;
+  background-repeat: no-repeat;
 
-    border-radius: 50px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #dbdbdb;
+  border-radius: 50px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dbdbdb;
 }
 
 #searchbar:hover {
-    /* Shadow when hover */
-    box-shadow: 0px 1px 5px 1px #dbdbdb;
+  /* Shadow when hover */
+  box-shadow: 0px 1px 5px 1px #dbdbdb;
 }
 
 #searchbar:focus {
-    /* Remove blue outline when selected */
-    outline: none;
+  /* Remove blue outline when selected */
+  outline: none;
 }
 
 #search-options {
-    grid-area: search-options;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-top: -45px;
+  grid-area: search-options;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: -45px;
 }
 
 #search-settings {
-    grid-area: search-settings;
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: -45px;
-    margin-right: 20px;
+  grid-area: search-settings;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -45px;
+  margin-right: 20px;
 }
 
 .settings-link a {
-    /* Appearance of links in nav bar */
-    display: inline-block;
-    color: #63666b;
-    padding: 0 7px 10px;
-    font-family: Arial, sans-serif;
-    font-size: 0.8em;
+  /* Appearance of links in nav bar */
+  display: inline-block;
+  color: #63666b;
+  padding: 0 7px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8em;
 }
 
 .settings-link a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* ISSUE: The text of links are placed at bottom next to icons. Gotta fix that somehow.
 Maybe icons have to be separate from text. Possible solution: */
 
-.material-icons, .material-icons-outlined, .fa {
-    padding-bottom: 3px;
-    vertical-align: middle;
-  }
+.material-icons,
+.material-icons-outlined,
+.fa {
+  padding-bottom: 3px;
+  vertical-align: middle;
+}
 
 .option-link a {
-    /* Appearance of links in nav bar */
-    display: inline-block;
-    color: #63666b;
-    margin: 0 8px 0 5px;
-    padding: 0 5px 7px;
-    font-family: Arial, sans-serif;
-    font-size: 0.8em;
+  /* Appearance of links in nav bar */
+  display: inline-block;
+  color: #63666b;
+  margin: 0 8px 0 5px;
+  padding: 0 5px 7px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8em;
 }
 
 .option-link a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #all-results {
-    /* Added padding top top because border pushed it upwards */
-    padding-top: 3px;
-    color: #2e73e7;
-    border-bottom: 3px solid #2e73e7;
+  /* Added padding top top because border pushed it upwards */
+  padding-top: 3px;
+  color: #2e73e7;
+  border-bottom: 3px solid #2e73e7;
 }
 
 #tools {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 #tools:hover {
-    /* Used box-shadow as trick for button outline*/
-    box-shadow: 0 0 1px 1px #c6c6c6;
-    background-image: linear-gradient(#f8f7f7, #f1f1f1);
-    color: #222222;
-    cursor: pointer;
+  /* Used box-shadow as trick for button outline*/
+  box-shadow: 0 0 1px 1px #c6c6c6;
+  background-image: linear-gradient(#f8f7f7, #f1f1f1);
+  color: #222222;
+  cursor: pointer;
 }
 
 #nav-icons {
-    grid-area: icons;
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  grid-area: icons;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .icon-link a {
-    /* Inherited code but the color change when hover doesn't work unless this exists */
-    display: block;
-    margin: 15px 0;
+  /* Inherited code but the color change when hover doesn't work unless this exists */
+  display: block;
+  margin: 15px 0;
 
-    /* The follownig padding is important for hover background */
-    padding: 13px 13px 10px 13px;
+  /* The follownig padding is important for hover background */
+  padding: 13px 13px 10px 13px;
 }
 
 #nav-app {
-    /* Grey app icon in nav */
-    width: 15px;
-    height: 15px;
+  /* Grey app icon in nav */
+  width: 15px;
+  height: 15px;
 }
 
 #app-icon a:hover {
-    /* background-color: red; */
-    background-color: #f0f0f0;
-    border-radius: 50px;
+  /* background-color: red; */
+  background-color: #f0f0f0;
+  border-radius: 50px;
 }
 
 #nav-profile {
-    /* Profile pic */
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    margin-right: 16px;
+  /* Profile pic */
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  margin-right: 16px;
 }
-
-
 
 /* MAIN PART */
 
 p {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
-#result-amount {
-    color: #707579;
+.result-amount {
+  color: #707579;
 }
 
 #search-results {
-    margin-top: 135px;
-    margin-left: 180px;
-    width: 600px;
+  margin-top: 135px;
+  margin-left: 180px;
+  width: 600px;
 }
 
-.single-result, .result-link {
-    margin: 20px 0;
-    line-height: 1.4em;
-    color: #52565a;
+.single-result,
+.result-link {
+  margin: 12px 0 0;
+  line-height: 1.4em;
+  color: #52565a;
 }
 
 .result-link {
-    font-size: 0.9em;
-    text-decoration: none;
+  font-size: 0.9em;
+  /* Used inline-block in order to remove underline. Had to remove bottom padding as well */
+  display: inline-block;
+  text-decoration: none;
 }
 
 .result-link:hover {
-    
 }
 
 .result-title {
-    font-size: 1.25em;
-    margin: 5px 0;
+  font-size: 1.25em;
+  margin: 5px 0;
 }
 
 .result-highlight {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* Turned the buttons container into flex element for centering */
 #buttons-search {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* Button styling */
 .button {
-    /* background-color: #f2f2f1; */
-    background-image: linear-gradient(#f5f5f4, #f1f2f2);
-    border: none;
-    border-radius: 4px;
-    color: #65696e;
-    padding: 10px 18px;
-    text-align: center;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 0.9em;
-    margin: 0 7px;
+  /* background-color: #f2f2f1; */
+  background-image: linear-gradient(#f5f5f4, #f1f2f2);
+  border: none;
+  border-radius: 4px;
+  color: #65696e;
+  padding: 10px 18px;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+  margin: 0 7px;
 }
 
-
 #language {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 0.8em;
-    margin-top: 30px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 0.8em;
+  margin-top: 30px;
 }
 
 #pika {
-    margin-left: 3px;
+  margin-left: 3px;
 }
 
 #footer {
-    /* Styling */
-    list-style-type: none;
-    background-color: #f2f2f2;
-    color: #616469;
-    font-family: Arial, sans-serif;
-    font-size: 0.95em;
+  /* Styling */
+  list-style-type: none;
+  background-color: #f2f2f2;
+  color: #616469;
+  font-family: Arial, sans-serif;
+  font-size: 0.95em;
 
-    /* Position */
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+  /* Position */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 
-    /* Container behavior: Decided grid with 3 boxes would be the best fit.
+  /* Container behavior: Decided grid with 3 boxes would be the best fit.
     Also allows for simple responsive adjustments. */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2.75em 2.75em;
-    grid-template-areas:
-        "box1 box1"
-        "box2 box3";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2.75em 2.75em;
+  grid-template-areas:
+    "box1 box1"
+    "box2 box3";
 }
 
 .footer-link a {
-    /* Styling of links */
-    display: inline;
-    color: #616469;
-    margin: 15px 5px;
-    padding: 0 8px;
-    font-family: Arial, sans-serif;
-    font-size: 0.9em;
+  /* Styling of links */
+  display: inline;
+  color: #616469;
+  margin: 15px 5px;
+  padding: 0 8px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
 }
 
 /* Behavior of grid boxes */
 #footer-box1 {
-    grid-area: box1;
-    padding-left: 33px;
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;
-    /* Struggled with align and justify items vs self.
+  grid-area: box1;
+  padding-left: 33px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  /* Struggled with align and justify items vs self.
     Depending on the element, one might be better fit than the other.
     In this box, align-items was preferable due to the borders. */
 }
 
 #footer-box2 {
-    grid-area: box2;
-    display: flex;
-    align-self: center;
-    margin-left: 20px;
-    /* Justify was not defined due to default being left */
+  grid-area: box2;
+  display: flex;
+  align-self: center;
+  margin-left: 20px;
+  /* Justify was not defined due to default being left */
 }
 
 #footer-box3 {
-    grid-area: box3;
-    display: flex;
-    align-self: center;
-    justify-self: self-end;
-    margin-right: 20px;
-    /* Justify defined to make it "stick" to the right */
+  grid-area: box3;
+  display: flex;
+  align-self: center;
+  justify-self: self-end;
+  margin-right: 20px;
+  /* Justify defined to make it "stick" to the right */
 }
 
 @media (max-width: 805px) {
-    #footer {
-        /* Stacking the boxes in small window */
-        grid-template-columns: 1fr;
-        grid-template-rows: 2.75em 2.75em 2.75em;
-        grid-template-areas:
-            "box1"
-            "box3"
-            "box2";
-    }
+  #footer {
+    /* Stacking the boxes in small window */
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.75em 2.75em 2.75em;
+    grid-template-areas:
+      "box1"
+      "box3"
+      "box2";
+  }
 
-    #footer-box2, #footer-box3 {
-        justify-self: center;
-        margin-left: 0;
-        margin-right: 0;
-    }
+  #footer-box2,
+  #footer-box3 {
+    justify-self: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
